@@ -25,4 +25,9 @@ app.get('/', (req, res, next) => {
             console.log(testData);
             res.send(testData.rows);
         })
-        
+        .catch(err => {
+            console.error(err);
+            res.status(500).send('Internet Server Error');
+        });
+})
+
